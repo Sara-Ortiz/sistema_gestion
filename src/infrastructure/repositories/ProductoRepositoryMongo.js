@@ -1,21 +1,10 @@
-import mongoose from "mongoose";
-
-const ProductoSchema = new mongoose.Schema({
-  nombre: String,
-  descripcion: String,
-  precio:Number,
-  stock:Number,
-  categoria:String,
-  createdAt:String,
-});
-
-const ProductoModel = mongoose.model("Producto", ProductoSchema);
+import {ProductoModel} from "../db/ProductoModel.js"
 
 class ProductoRepositoryMongo {
 
   async create(productoData) {
-    const user = new ProductoModel(productoData);
-    return await user.save();
+    const producto = new ProductoModel(productoData);
+    return await producto.save();
   }
 
   async findAll() {
@@ -33,6 +22,10 @@ class ProductoRepositoryMongo {
   async delete(id) {
    return await ProductoModel.findByIdAndDelete(id);
   }
+
+  // async updateStock(id, newStock) {
+  //   return await ProductoModel.findByIdAndUpdate(id, { stock: newStock }, { new: true });
+  // }
   
 }
 

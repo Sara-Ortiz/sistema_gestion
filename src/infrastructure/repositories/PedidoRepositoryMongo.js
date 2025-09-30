@@ -1,13 +1,5 @@
-import mongoose from "mongoose";
+import {PedidoModel} from "../db/PedidoModel.js"
 
-const PedidoSchema = new mongoose.Schema({
-  usuarioId: String,
-  total:Number,
-  estado:Boolean,
-  createdAt:String
-});
-
-const PedidoModel = mongoose.model("Pedido", PedidoSchema);
 
 class PedidoRepositoryMongo {
 
