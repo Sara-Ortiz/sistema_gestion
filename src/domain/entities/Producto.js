@@ -1,8 +1,8 @@
 class Producto {
   constructor({ id, nombre, descripcion, precio, stock, categoria, createdAt }) {
-    if (!nombre.length < 10) throw new Error("El nombre debe tener al menos 10 caracteres");
-    if (precio <= 0) throw new Error("El precio debe ser un número positivo");
-    if (stock < 0) throw new Error("El stock no puede ser negativo");
+    if (!nombre || nombre.length < 10) throw new Error("El nombre debe tener al menos 10 caracteres");
+    if (!precio || precio <= 0) throw new Error("El precio debe ser un número positivo");
+    if (!stock || stock < 0) throw new Error("El stock no puede ser negativo");
     if (!categoria) throw new Error("La categoría es obligatoria");
     this.id = id;
     this.nombre = nombre;

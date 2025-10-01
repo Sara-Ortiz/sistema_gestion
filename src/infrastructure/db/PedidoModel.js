@@ -10,7 +10,7 @@ const PedidoDetalleSchema = new mongoose.Schema({
 const PedidoSchema = new mongoose.Schema({
     usuarioId: {type: String, required:true},
     total: {type: Number, required:true},
-    estado: {type: Boolean, required:true},
+    estado: {type: String, required:true, enum: ['activo', 'cancelado']}, // Define los únicos valores permitidos
     pedidoDetalle: [PedidoDetalleSchema],
     createdAt: {type: Date, required:true, default: Date.now}
 });

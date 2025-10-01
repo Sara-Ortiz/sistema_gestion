@@ -8,11 +8,21 @@ import {
   deletePedido
 } from "../controllers/pedidoController.js";
 
+import { authMiddleware } from "../../interfaces/middlewares/authMiddleware.js";
+
 const router = Router();
-router.post("/", createPedido);
-router.get("/", getPedidos);
-router.get("/:id", getPedidoById);
-router.put("/:id", updatePedido);
+router.post("/",authMiddleware, createPedido);
+router.get("/",authMiddleware, getPedidos);
+router.get("/:id",authMiddleware, getPedidoById);
+router.put("/:id",authMiddleware, updatePedido);
+router.put("/:id/cancel",authMiddleware, updatePedido); 
 router.delete("/:id", deletePedido);
 
 export default router
+
+
+
+
+
+
+
