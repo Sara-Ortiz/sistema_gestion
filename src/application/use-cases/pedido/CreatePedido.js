@@ -50,7 +50,7 @@ export default class CreatePedido {
             
             //FIJAR TOTAL Y ESTADO INICIAL
             pedido.total = totalPedido;
-            pedido.estado = true; 
+            pedido.estado = activo; 
 
             //Crear el registro del pedido
             const nuevoPedido = await this.pedidoRepository.create(pedido, { session });
