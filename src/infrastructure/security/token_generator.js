@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 
 export default class TokenGenerator {
-  constructor(secret, expiresIn = "8m") {
+  constructor(secret, expiresIn = "1h") {
     this.secret = secret;
     this.expiresIn = expiresIn;
   }
