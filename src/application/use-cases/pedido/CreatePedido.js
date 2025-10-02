@@ -48,6 +48,7 @@ export default class CreatePedido {
                 await this.productoRepository.update(productoId, { stock: nuevoStock }, { session }); 
             }
             
+            
             //FIJAR TOTAL Y ESTADO INICIAL
             pedido.total = totalPedido;
             pedido.estado = "activo"; 

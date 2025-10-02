@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 
 export default class PasswordEncrypter {
   constructor() {
-    this.saltRounds = 10;
+    this.saltRounds = 10; //tiempo de procesamiento del hash
   }
 
   async hashPassword(password) {
